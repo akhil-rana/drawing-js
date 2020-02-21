@@ -1,11 +1,13 @@
 .RectInput,
+.SquareInput,
 .drawing {
   align-content: center;
   text-align: center;
   /* display: flex;
   flex-wrap: wrap; */
 }
-.RectInput .input-group {
+.RectInput .input-group,
+.SquareInput .input-group {
   margin: 0 auto;
   width: 20em;
 }
