@@ -20,7 +20,7 @@ for (var i = 0; i <= num_lines_x; i++) {
 
   // If line represents X-axis draw in different color
   if (i == x_axis_distance_grid_lines) ctx1.strokeStyle = "#000000";
-  else ctx1.strokeStyle = "#e9e9e9";
+  else ctx1.strokeStyle = "#9e9e9e";
 
   if (i == num_lines_x) {
     ctx1.moveTo(0, grid_size * i);
@@ -39,7 +39,7 @@ for (i = 0; i <= num_lines_y; i++) {
 
   // If line represents X-axis draw in different color
   if (i == y_axis_distance_grid_lines) ctx1.strokeStyle = "#000000";
-  else ctx1.strokeStyle = "#e9e9e9";
+  else ctx1.strokeStyle = "#9e9e9e";
 
   if (i == num_lines_y) {
     ctx1.moveTo(grid_size * i, 0);
@@ -69,7 +69,7 @@ for (i = 1; i < num_lines_y - y_axis_distance_grid_lines; i++) {
   ctx1.stroke();
 
   // Text value at that point
-  ctx1.font = "9px Arial";
+  ctx1.font = "10px Arial";
   ctx1.textAlign = "start";
   ctx1.fillText(
     x_axis_starting_point.number * i + x_axis_starting_point.suffix,
@@ -90,7 +90,7 @@ for (i = 1; i < y_axis_distance_grid_lines; i++) {
   ctx1.stroke();
 
   // Text value at that point
-  ctx1.font = "9px Arial";
+  ctx1.font = "10px Arial";
   ctx1.textAlign = "end";
   ctx1.fillText(
     -x_axis_starting_point.number * i + x_axis_starting_point.suffix,

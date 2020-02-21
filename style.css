@@ -5,7 +5,7 @@
   /* display: flex;
   flex-wrap: wrap; */
 }
-.RectInput input {
+.RectInput .input-group {
   margin: 0 auto;
   width: 20em;
 }
@@ -13,7 +13,7 @@
   margin: 0 auto;
 }
 #shape {
-  /* background: rgb(194, 194, 194); */
+  background: rgb(235, 235, 235);
 }
 .drawing div {
   margin: 0 auto;

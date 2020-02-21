@@ -12,6 +12,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     /> -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.0/css/bootstrap-colorpicker.min.css"
+    /> -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -21,26 +25,161 @@
       <span class="navbar-brand">Figure Drawing</span>
     </nav>
     <br /><br />
-    <div class="rectangle">
+    <div class="Input" style="text-align: center;">
+      Select Shape : &nbsp;
+      <select class="custom-select" style="width: 10em;">
+        <option value="1">Square</option>
+        <option selected value="2">Rectangle</option>
+        <option value="3">Triangle</option>
+        <option value="4">N-Polygon</option> </select
+      ><br />
+      <br />
       <div class="RectInput">
-        <input
-          placeholder="Enter width"
-          id="RectWidth"
-          type="text"
-          class="form-control"
-        />
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"
+              >Width (in px)</span
+            >
+          </div>
+          <input
+            type="number"
+            class="form-control"
+            id="RectWidth"
+            aria-describedby="basic-addon1"
+          />
+        </div>
         <br />
-        <input
-          placeholder="Enter height"
-          id="RectHeight"
-          type="text"
-          class="form-control"
-        />
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"
+              >Height (in px)</span
+            >
+          </div>
+          <input
+            type="number"
+            class="form-control"
+            id="RectHeight"
+            aria-describedby="basic-addon1"
+          />
+        </div>
         <br />
-        <button id="drawRect" type="button" class="btn btn-primary">
-          Draw
-        </button>
+        <div
+          class="accordion"
+          id="accordionExample"
+          style="width: 30em; margin: 0 auto;"
+        >
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  More options:
+                </button>
+              </h2>
+            </div>
+
+            <div
+              id="collapseOne"
+              class="collapse "
+              style="text-align: center;"
+              aria-labelledby="headingOne"
+              data-parent="#accordionExample"
+            >
+              <div class="card-body" style="text-align: center;">
+                <div class="input-group" style="width: 20em; margin: 0 auto;">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      >X-Offset</span
+                    >
+                  </div>
+                  <input
+                    type="number"
+                    class="form-control"
+                    value="0"
+                    id="xoff"
+                    aria-describedby="basic-addon1"
+                  />
+                </div>
+                <!-- <input
+                  placeholder="X-Offset"
+                  id="xoff"
+                  type="number"
+                  class="form-control"
+                /> -->
+                <br />
+                <div class="input-group" style="width: 20em; margin: 0 auto;">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      >Y-Offset</span
+                    >
+                  </div>
+                  <input
+                    type="number"
+                    class="form-control"
+                    value="0"
+                    id="yoff"
+                    aria-describedby="basic-addon1"
+                  />
+                </div>
+                <!-- <input
+                  placeholder="Y-Offset"
+                  id="yoff"
+                  type="number"
+                  class="form-control"
+                /> -->
+
+                <br />
+                <div class="input-group" style="width: 20em; margin: 0 auto;">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      >Color</span
+                    >
+                  </div>
+                  <input
+                    class="form-control jscolor"
+                    id="color"
+                    value="000000"
+                    aria-describedby="basic-addon1"
+                  />
+                </div>
+
+                <br />
+                <span class="custom-control custom-checkbox">
+                  <input
+                    type="checkbox"
+                    class="custom-control-input colorFill"
+                    id="customCheck1"
+                  />
+                  <label class="custom-control-label" for="customCheck1"
+                    >Color fill</label
+                  >
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <br />
+      <span class="custom-control custom-checkbox">
+        <input
+          type="checkbox"
+          checked
+          class="custom-control-input clearCanvas"
+          id="customCheck2"
+        />
+        <label class="custom-control-label" for="customCheck2"
+          >Clear canvas</label
+        > </span
+      ><br />
+      <button id="drawRect" type="button" class="btn btn-primary">
+        Draw
+      </button>
     </div>
     <br />
     <div class="drawing">
@@ -54,7 +193,7 @@
         ></canvas>
       </div>
     </div>
-
+    <br /><br />
     <script src="./files/libraries/js/jquery-3.4.1.min.js"></script>
     <script
       src="./files/libraries/js/popper.min.js"
@@ -66,9 +205,11 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.0/js/bootstrap-colorpicker.min.js"></script> -->
     <!-- <script src="./files/libraries/js/d3-axis.v1.min.js"></script> -->
     <script src="./script.js"></script>
     <script src="./files/js/canvasBG.js"></script>
+    <script src="./files/libraries/js/jscolor.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
   </body>
 </html>
