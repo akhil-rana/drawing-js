@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="./files/libraries/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    /> -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-primary">
+      <span class="navbar-brand">Figure Drawing</span>
+    </nav>
+    <br /><br />
+    <div class="rectangle">
+      <div class="RectInput">
+        <input
+          placeholder="Enter width"
+          id="RectWidth"
+          type="text"
+          class="form-control"
+        />
+        <br />
+        <input
+          placeholder="Enter height"
+          id="RectHeight"
+          type="text"
+          class="form-control"
+        />
+        <br />
+        <button id="drawRect" type="button" class="btn btn-primary">
+          Draw
+        </button>
+      </div>
+    </div>
+    <br />
+    <div class="drawing">
+      <div style="width: 700px; height: 500px; position:relative;">
+        <canvas id="shape" width="700" height="500"></canvas>
+        <canvas
+          id="my-canvas"
+          width="700"
+          height="500"
+          style="position:absolute; top:0; left:0;"
+        ></canvas>
+      </div>
+    </div>
+
+    <script src="./files/libraries/js/jquery-3.4.1.min.js"></script>
+    <script
+      src="./files/libraries/js/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="./files/libraries/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="./files/libraries/js/d3-axis.v1.min.js"></script> -->
+    <script src="./script.js"></script>
+    <script src="./files/js/canvasBG.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+  </body>
+</html>
