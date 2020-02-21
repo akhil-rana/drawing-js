@@ -30,7 +30,7 @@
       <select class="custom-select shapeSelect" style="width: 10em;">
         <option value="1">Square</option>
         <option selected value="2">Rectangle</option>
-        <option value="3">Triangle</option>
+        <option value="3">Circle</option>
         <option value="4">N-Polygon</option> </select
       ><br />
       <br />
@@ -155,7 +155,7 @@
                 <span class="custom-control custom-checkbox">
                   <input
                     type="checkbox"
-                    class="custom-control-input colorFill"
+                    class="custom-control-input colorFillr"
                     id="customCheck1"
                   />
                   <label class="custom-control-label" for="customCheck1"
@@ -274,10 +274,129 @@
                 <span class="custom-control custom-checkbox">
                   <input
                     type="checkbox"
-                    class="custom-control-input colorFill"
+                    class="custom-control-input colorFills"
                     id="customCheck4"
                   />
                   <label class="custom-control-label" for="customCheck4"
+                    >Color fill</label
+                  >
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="CircleInput" style="display: none;">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"
+              >Radius (in px)</span
+            >
+          </div>
+          <input
+            type="number"
+            class="form-control"
+            id="radius"
+            placeholder="eg. 10"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <br />
+        <div
+          class="accordion"
+          id="accordionExample"
+          style="width: 22em; margin: 0 auto;"
+        >
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  More options:
+                </button>
+              </h2>
+            </div>
+
+            <div
+              id="collapseOne"
+              class="collapse "
+              style="text-align: center;"
+              aria-labelledby="headingOne"
+              data-parent="#accordionExample"
+            >
+              <div class="card-body" style="text-align: center;">
+                <div class="input-group" style="width: 18em; margin: 0 auto;">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      >Center (<b>x</b>, y)</span
+                    >
+                  </div>
+                  <input
+                    type="number"
+                    class="form-control"
+                    value="0"
+                    id="xoffc"
+                    aria-describedby="basic-addon1"
+                  />
+                </div>
+                <!-- <input
+                  placeholder="X-Offset"
+                  id="xoff"
+                  type="number"
+                  class="form-control"
+                /> -->
+                <br />
+                <div class="input-group" style="width: 18em; margin: 0 auto;">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      >Center (x , <b>y</b>)</span
+                    >
+                  </div>
+                  <input
+                    type="number"
+                    class="form-control"
+                    value="0"
+                    id="yoffc"
+                    aria-describedby="basic-addon1"
+                  />
+                </div>
+                <!-- <input
+                  placeholder="Y-Offset"
+                  id="yoff"
+                  type="number"
+                  class="form-control"
+                /> -->
+
+                <br />
+                <div class="input-group" style="width: 18em; margin: 0 auto;">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3"
+                      >Color #</span
+                    >
+                  </div>
+                  <input
+                    class="form-control jscolor"
+                    id="colorCircle"
+                    value="000000"
+                    aria-describedby="basic-addon3"
+                  />
+                </div>
+
+                <br />
+                <span class="custom-control custom-checkbox">
+                  <input
+                    type="checkbox"
+                    class="custom-control-input colorFillc"
+                    id="customCheck3"
+                  />
+                  <label class="custom-control-label" for="customCheck3"
                     >Color fill</label
                   >
                 </span>

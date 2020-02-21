@@ -1,5 +1,6 @@
 .RectInput,
 .SquareInput,
+.CircleInput,
 .drawing {
   align-content: center;
   text-align: center;
@@ -7,7 +8,8 @@
   flex-wrap: wrap; */
 }
 .RectInput .input-group,
-.SquareInput .input-group {
+.SquareInput .input-group,
+.CircleInput .input-group {
   margin: 0 auto;
   width: 20em;
 }
