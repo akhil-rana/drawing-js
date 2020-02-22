@@ -1,6 +1,6 @@
 const canvas = document.getElementById("shape");
 const ctx = canvas.getContext("2d");
-
+let rStroke = 1;
 $("#drawFig").click(function() {
   let selectedValue = $(".shapeSelect").val();
   if (selectedValue == 2) {
@@ -17,6 +17,7 @@ $("#drawFig").click(function() {
       ctx.fillStyle = color;
       ctx.fillRect(xoff, yoff, rectWidth, rectHeight);
     } else {
+      ctx.lineWidth = rStroke;
       ctx.strokeStyle = color;
       ctx.strokeRect(xoff, yoff, rectWidth, rectHeight);
     }
@@ -72,4 +73,33 @@ $(".shapeSelect").change(function() {
     $(".RectInput").css("display", "none");
     $(".CircleInput").css("display", "block");
   }
+});
+
+$(".colorFillr").change(function() {
+  console.log("changed");
+  if ($(".colorFillr").is(":checked")) {
+    $("#rectStroke").prop("disabled", true);
+  } else {
+    $("#rectStroke").prop("disabled", false);
+  }
+});
+$(".colorFills").change(function() {
+  console.log("changed");
+  if ($(".colorFills").is(":checked")) {
+    $("#squareStroke").prop("disabled", true);
+  } else {
+    $("#squareStroke").prop("disabled", false);
+  }
+});
+$(".colorFillc").change(function() {
+  console.log("changed");
+  if ($(".colorFillc").is(":checked")) {
+    $("#circleStroke").prop("disabled", true);
+  } else {
+    $("#circleStroke").prop("disabled", false);
+  }
+});
+$("#rectStroke").change(function() {
+  rStroke = $(this).val();
+  $("#rStrokeValue").text(rStroke + " px");
 });
