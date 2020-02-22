@@ -32,7 +32,10 @@
   </head>
   <body>
     <nav class="navbar navbar-dark bg-primary">
-      <span class="navbar-brand">Figure Drawing</span>
+      <span class="navbar-brand">
+        <i class="fas fa-draw-polygon fa-lg" aria-hidden="true"></i>&nbsp;
+        Figure Drawing
+      </span>
     </nav>
     <br /><br />
     <div class="Input" style="text-align: center;">
@@ -41,7 +44,8 @@
         <option value="1">Square</option>
         <option selected value="2">Rectangle</option>
         <option value="3">Circle</option>
-        <option value="4">N-Polygon</option> </select
+        <option value="4">n-Polygon</option>
+        <option value="5">Line</option> </select
       ><br />
       <br />
       <div class="RectInput">
@@ -81,19 +85,18 @@
           style="width: 22em; margin: 0 auto;"
         >
           <div class="card">
-            <div class="card-header" id="headingOne">
-              <h2 class="mb-0">
-                <button
-                  class="btn btn-link"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
-                  More options:
-                </button>
-              </h2>
+            <div>
+              <button
+                class="btn btn-link lead"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-controls="collapseOne"
+              >
+                <span class="lead" style="font-size: 1.2em;">
+                  More options :
+                </span>
+              </button>
             </div>
 
             <div
@@ -170,6 +173,7 @@
                   class="custom-range"
                   min="0.05"
                   max="20"
+                  value="1"
                   step="0.05"
                   id="rectStroke"
                 />
@@ -212,19 +216,18 @@
           style="width: 22em; margin: 0 auto;"
         >
           <div class="card">
-            <div class="card-header" id="headingOne">
-              <h2 class="mb-0">
-                <button
-                  class="btn btn-link"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
-                  More options:
-                </button>
-              </h2>
+            <div>
+              <button
+                class="btn btn-link lead"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-controls="collapseOne"
+              >
+                <span class="lead" style="font-size: 1.2em;">
+                  More options :
+                </span>
+              </button>
             </div>
 
             <div
@@ -293,13 +296,14 @@
                 </div>
 
                 <br />
-                Stroke width:
+                Stroke width: <span id="sStrokeValue"> 1 px</span>
                 <input
                   style="width: 15em;"
                   type="range"
                   class="custom-range"
                   min="0.05"
                   max="20"
+                  value="1"
                   step="0.05"
                   id="squareStroke"
                 />
@@ -341,19 +345,18 @@
           style="width: 22em; margin: 0 auto;"
         >
           <div class="card">
-            <div class="card-header" id="headingOne">
-              <h2 class="mb-0">
-                <button
-                  class="btn btn-link"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
-                  More options:
-                </button>
-              </h2>
+            <div>
+              <button
+                class="btn btn-link lead"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-controls="collapseOne"
+              >
+                <span class="lead" style="font-size: 1.2em;">
+                  More options :
+                </span>
+              </button>
             </div>
 
             <div
@@ -422,13 +425,14 @@
                 </div>
                 <br />
 
-                Stroke width:
+                Stroke width: <span id="cStrokeValue"> 1 px</span>
                 <input
                   style="width: 15em;"
                   type="range"
                   class="custom-range"
                   min="0.05"
                   max="20"
+                  value="1"
                   step="0.05"
                   id="circleStroke"
                 />
@@ -448,8 +452,144 @@
           </div>
         </div>
       </div>
+      <div class="LineInput" style="display: none;">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"
+              >P1 (<b>x</b> ,y)</span
+            >
+          </div>
+          <input
+            type="number"
+            class="form-control"
+            id="line1x"
+            placeholder="eg. 10"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <br />
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"
+              >P1 (x, <b>y</b>)</span
+            >
+          </div>
+          <input
+            type="number"
+            class="form-control"
+            id="line1y"
+            placeholder="eg. 10"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <br />
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"
+              >P2 (<b>x</b> ,y)</span
+            >
+          </div>
+          <input
+            type="number"
+            class="form-control"
+            id="line2x"
+            placeholder="eg. 10"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <br />
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"
+              >P2 (x, <b>y</b>)</span
+            >
+          </div>
+          <input
+            type="number"
+            class="form-control"
+            id="line2y"
+            placeholder="eg. 10"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <br />
+        <div
+          class="accordion"
+          id="accordionExample"
+          style="width: 22em; margin: 0 auto;"
+        >
+          <div class="card">
+            <div>
+              <button
+                class="btn btn-link lead"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-controls="collapseOne"
+              >
+                <span class="lead" style="font-size: 1.2em;">
+                  More options :
+                </span>
+              </button>
+            </div>
+
+            <div
+              id="collapseOne"
+              class="collapse "
+              style="text-align: center;"
+              aria-labelledby="headingOne"
+              data-parent="#accordionExample"
+            >
+              <div class="card-body" style="text-align: center;">
+                <!-- <input
+                  placeholder="X-Offset"
+                  id="xoff"
+                  type="number"
+                  class="form-control"
+                /> -->
+
+                <!-- <input
+                  placeholder="Y-Offset"
+                  id="yoff"
+                  type="number"
+                  class="form-control"
+                /> -->
+
+                <br />
+                <div class="input-group" style="width: 18em; margin: 0 auto;">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      >Color #</span
+                    >
+                  </div>
+                  <input
+                    class="form-control jscolor"
+                    id="colorLine"
+                    value="000000"
+                    aria-describedby="basic-addon1"
+                  />
+                </div>
+
+                <br />
+
+                Stroke width: <span id="lStrokeValue"> 1 px</span>
+                <input
+                  style="width: 15em;"
+                  type="range"
+                  class="custom-range"
+                  min="0.05"
+                  max="20"
+                  value="1"
+                  step="0.05"
+                  id="LineStroke"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <br />
-      <span class="custom-control custom-checkbox">
+      <!-- <span class="custom-control custom-checkbox">
         <input
           type="checkbox"
           checked
@@ -459,20 +599,26 @@
         <label class="custom-control-label" for="customCheck2"
           >Clear canvas</label
         > </span
-      ><br />
-      <button id="drawFig" type="button" class="btn btn-primary">
-        Draw
+      ><br /> -->
+      <button id="drawFig" type="button" class="btn btn-primary px-3">
+        Draw &nbsp; <i class="fas fa-pencil-alt fa-lg" aria-hidden="true"></i>
       </button>
     </div>
-    <br />
 
     <div class="drawing" style="text-align: center;">
-      <button type="button" class="btn btn-success px-3">
+      <button type="button" class="btn btn-success px-3" id="clearCanvas">
         <i class="fas fa-sync fa-lg" aria-hidden="true"></i>
       </button>
-      <button type="button" class="btn btn-warning px-3">
+      <button type="button" class="btn btn-warning px-3" id="undo">
         <i class="fas fa-undo fa-lg" aria-hidden="true"></i>
       </button>
+      <a id="downloadCanvas" download="canvas.png"
+        ><button type="button" class="btn btn-default px-3">
+          <i class="fas fa-download fa-lg" aria-hidden="true"></i></button
+      ></a>
+
+      <br />
+      <br />
       <div style="min-width: 18em; height: 520px; overflow: auto;">
         <div style="width: 720px; height: 510px; position:relative;">
           <canvas id="shape" width="720" height="510"></canvas>

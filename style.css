@@ -1,6 +1,7 @@
 .RectInput,
 .SquareInput,
 .CircleInput,
+.LineInput,
 .drawing {
   align-content: center;
   text-align: center;
@@ -9,7 +10,8 @@
 }
 .RectInput .input-group,
 .SquareInput .input-group,
-.CircleInput .input-group {
+.CircleInput .input-group,
+.LineInput .input-group {
   margin: 0 auto;
   width: 20em;
 }
