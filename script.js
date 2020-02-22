@@ -99,6 +99,7 @@ $(".colorFillc").change(function() {
     $("#circleStroke").prop("disabled", false);
   }
 });
+
 $("#rectStroke").change(function() {
   rStroke = $(this).val();
   $("#rStrokeValue").text(rStroke + " px");
