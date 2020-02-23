@@ -181,6 +181,31 @@ $("#downloadCanvas").click(function() {
   downloadCanvas.setAttribute("href", image);
 });
 
+$(document).ready(function() {
+  $(".SquareInput").css("display", "none");
+  $(".LineInput").css("display", "none");
+  $(".CircleInput").css("display", "none");
+  $(".RectInput").css("display", "block");
+  $(".shapeSelect").val(2);
+});
+let clicks = 0;
+$("#my-canvas").click(function(e) {
+  var offset = $(this).offset();
+  var relativeX = e.pageX - offset.left;
+  var relativeY = e.pageY - offset.top;
+  if ($(".shapeSelect").val() == 5) {
+    if (clicks == 2) clicks = 0;
+    clicks++;
+    if (clicks == 1) {
+      $("#line1x").val(Math.round(relativeX));
+      $("#line1y").val(Math.round(relativeY));
+    }
+    if (clicks == 2) {
+      $("#line2x").val(Math.round(relativeX));
+      $("#line2y").val(Math.round(relativeY));
+    }
+  }
+});
 // function cRedo() {
 //   if (cStep < cPushArray.length - 1) {
 //     cStep++;
